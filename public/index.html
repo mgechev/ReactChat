@@ -2,9 +2,20 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="css/main.css">
   <title></title>
 </head>
 <body>
-  <h1>React chat</h1>
+  <section id="container">
+    <label for="room-name">Room name</label>
+    <input type="text" id="room-name-input" class="form-control">
+    <br>
+    <button id="connect-btn" class="btn btn-primary">Connect</button>
+  </section>
+  <script src="lib/react/react-with-addons.js"></script>
+  <script src="lib/react/JSXTransformer.js"></script>
+  <script src="lib/jquery/dist/jquery.js"></script>
+  <script type="text/jsx" src="src/app.jsx"></script>
 </body>
 </html>
