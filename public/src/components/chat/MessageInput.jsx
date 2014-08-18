@@ -22,7 +22,7 @@ var MessageInput = React.createClass({
     return (
       <input type="text"
         className = 'form-control'
-        placeholder={Messages.CHAT_INPUT_PLACEHOLDER}
+        placeholder='Enter a message...'
         valueLink={this.linkState('message')}
         onKeyUp={this.keyHandler}/>
     );

@@ -2,11 +2,13 @@
 
 $(function () {
   $('#connect-btn').click(function () {
-    initChat($('#container')[0], $('#room-name-input').val());
+    initChat($('#container')[0],
+      $('#room-name-input').val(),
+      $('#username-input').val());
   });
 
-  function initChat(container, roomName) {
-    React.renderComponent(<ChatBox room={roomName}></ChatBox>, container);
+  function initChat(container, roomName, username) {
+    React.renderComponent(<ChatBox username={username} roomName={roomName}></ChatBox>, container);
   }
 
 });

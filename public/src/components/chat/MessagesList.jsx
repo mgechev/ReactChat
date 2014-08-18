@@ -45,7 +45,7 @@ var MessagesList = React.createClass({
       }
     });
     if (!messages.length) {
-      messages = <div className="chat-no-messages">{Messages.NO_MESSAGES}</div>;
+      messages = <div className="chat-no-messages">No messages</div>;
     }
     return (
       <div ref="messageContainer" className="chat-messages">
