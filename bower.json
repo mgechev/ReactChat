@@ -1,0 +1,17 @@
+{
+  "name": "react-peerjs",
+  "main": "index.js",
+  "version": "0.0.0",
+  "authors": [
+    "mgechev <mgechev@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/lib",
+    "test",
+    "tests"
+  ]
+}

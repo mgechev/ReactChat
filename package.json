@@ -1,0 +1,22 @@
+{
+  "name": "react-peerjs",
+  "version": "0.0.0",
+  "description": "ReactJS chat with PeerJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "webrtc",
+    "nodejs",
+    "react",
+    "javascript",
+    "awesome"
+  ],
+  "author": "mgechev",
+  "license": "MIT",
+  "dependencies": {
+    "express": "~4.8.4",
+    "peer": "~0.2.6"
+  }
+}
