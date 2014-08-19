@@ -22,7 +22,8 @@ body, html {
 
 .chat-messages {
   overflow: auto;
-  height: -webkit-calc(100% - 64px);
+  height: 100%;
+  padding-right: 0px;
 }
 
 .chat-message {
@@ -40,4 +41,14 @@ body, html {
 
 .message-content {
   font-size: 16px;
+}
+
+.users-list {
+  height: 100%;
+  background-color: red;
+}
+
+.chat-content-wrapper {
+  height: -webkit-calc(100% - 64px);
+  margin: 0px;
 }

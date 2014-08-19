@@ -35,7 +35,10 @@ var ChatBox = React.createClass({
     return (
       <div className="chat-box" ref="root">
         <div className="chat-header ui-widget-header">React p2p Chat</div>
-        <MessagesList ref="messagesList"></MessagesList>
+        <div className="chat-content-wrapper row">
+          <MessagesList ref="messagesList"></MessagesList>
+          <UsersList ref="usersList"></UsersList>
+        </div>
         <MessageInput
           ref="messageInput"
           messageHandler={this.messageHandler}>
