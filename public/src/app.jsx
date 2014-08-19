@@ -11,4 +11,8 @@ $(function () {
     React.renderComponent(<ChatBox username={username} roomName={roomName}></ChatBox>, container);
   }
 
+//  window.onbeforeunload = function () {
+//    return 'Wat?!';
+//  };
+
 });

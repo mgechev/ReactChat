@@ -13,7 +13,7 @@ var ChatBox = React.createClass({
     message = this.refs.messageInput.getDOMNode().value;
     this.addMessage({
       content: message,
-      author : this.chatProxy.getLocalName()
+      author : this.chatProxy.getUsername()
     });
     this.chatProxy.send(message);
   },
