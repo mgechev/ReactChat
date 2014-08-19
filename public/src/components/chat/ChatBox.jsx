@@ -37,11 +37,12 @@ var ChatBox = React.createClass({
       content: message,
       author : this.chatProxy.getUsername()
     });
-    this.chatProxy.send(message);
+    this.chatProxy.broadcast(message);
   },
 
   addMessage: function (message) {
     if (message) {
+      message.date = new Date();
       this.refs.messagesList.addMessage(message);
     }
   },

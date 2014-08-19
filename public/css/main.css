@@ -26,44 +26,55 @@ body, html {
   overflow: auto;
   height: 100%;
   padding: 0px;
-  background-color: #999;
+  background-color: #F0F7FF;
 }
 
 .chat-message {
-  min-height: 30px;
-  background-color: #444;
-  padding-left: 20px;
-  padding-bottom: 5px;
-  border-bottom: 1px solid #555;
+  min-height: 21px;
+  padding-left: 10px;
   margin: 3px;
-  border-radius: 13px;
+  font-family: consolas;
 }
 
-.message-author {
-  font-size: 14px;
-  font-style: italic;
-  color: #ccc;
+.message-author,
+.message-time {
+  font-size: 15px;
+  color: #666;
+  float: left;
+  margin-right: 6px;
 }
 
 .message-content {
-  font-size: 16px;
-  color: #eee;
+  font-size: 15px;
+  color: #000;
+  display: inline-block;
 }
 
 .users-list {
   height: 100%;
-  background-color: #444;
+  background-color: #fff;
   color: #eee;
   padding: 0px;
 }
 
 .chat-user {
-  border-bottom: 1px solid #777;
-  background-color: #555;
   padding: 3px;
+  color: #111;
 }
 
 .chat-content-wrapper {
   height: -webkit-calc(100% - 64px);
   margin: 0px;
+}
+
+.reg-form-container {
+  width: 50%;
+  margin: auto;
+  padding-top: 10%;
+}
+
+.chat-no-messages {
+  padding: 10px;
+  color: #000;
+  font-size: 20px;
 }

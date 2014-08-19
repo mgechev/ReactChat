@@ -25,9 +25,13 @@ ChatProxy.prototype.onUserDisconnected = function (cb) {
   this.addListener(Topics.USER_DISCONNECTED, cb);
 };
 
-ChatProxy.prototype.send = function (message) {
+ChatProxy.prototype.send = function (user, message) {
+  this._peers[user].send(message);
+};
+
+ChatProxy.prototype.broadcast = function (msg) {
   for (var peer in this._peers) {
-    this._peers[peer].send(message);
+    this.send(peer, msg);
   }
 };
 
