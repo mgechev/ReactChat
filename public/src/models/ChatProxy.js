@@ -75,7 +75,7 @@ ChatProxy.prototype.connect = function (username) {
   });
   console.log('Connecting with username', username);
   this.peer = new Peer(username, {
-    host: 'localhost', port: 9000, path: '/chat'
+    host: location.hostname, port: 9000, path: '/chat'
   });
   this.peer.on('open', function (userId) {
     self.setUsername(userId);

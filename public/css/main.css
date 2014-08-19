@@ -1,5 +1,43 @@
+body, html {
+  height: 100%;
+}
+
 #container {
-  width: 50%;
+  width: 100%;
   margin: auto;
-  padding: 30px;
+  height: 100%;
+}
+
+.chat-box {
+  height: 100%;
+  background-color: #fff;
+}
+
+.chat-header {
+  height: 30px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.chat-messages {
+  overflow: auto;
+  height: -webkit-calc(100% - 64px);
+}
+
+.chat-message {
+  min-height: 30px;
+  background-color: #eee;
+  padding-left: 20px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #ddd;
+}
+
+.message-author {
+  font-size: 14px;
+  font-style: italic;
+}
+
+.message-content {
+  font-size: 16px;
 }
