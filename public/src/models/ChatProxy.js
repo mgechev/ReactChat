@@ -6,7 +6,7 @@ function ChatProxy() {
 ChatProxy.prototype = Object.create(EventEmitter.prototype);
 
 ChatProxy.prototype.onMessage = function (cb) {
-  this.addListener(ChatProxy.ON_MESSAGE, cb);
+  this.addListener(Topics.USER_MESSAGE, cb);
 };
 
 ChatProxy.prototype.getUsername = function () {
@@ -41,9 +41,10 @@ ChatProxy.prototype._connectTo = function (username) {
 ChatProxy.prototype._registerPeer = function (username, conn) {
   console.log('Registering', username);
   this._peers[username] = conn;
-  conn.on('data', function (e) {
-    console.log('Data received', e);
-  });
+  conn.on('data', function (msg) {
+    console.log('Messaga received', msg);
+    this.emit(Topics.USER_MESSAGE, { content: msg, author: username });
+  }.bind(this));
 };
 
 ChatProxy.prototype._disconnectFrom = function (username) {
