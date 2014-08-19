@@ -81,7 +81,8 @@ ChatProxy.prototype.connect = function (username) {
     self.setUsername(userId);
   });
   this.peer.on('connection', function (conn) {
-    self._registerPeer(username, conn);
+    self._registerPeer(conn.peer, conn);
+    self.emit(Topics.USER_CONNECTED, conn.peer);
   });
 };
 

@@ -3,10 +3,32 @@
 'use strict';
 
 var ChatBox = React.createClass({
+  getInitialState: function () {
+    return { users: [] };
+  },
+
   componentDidMount: function () {
     this.chatProxy = new ChatProxy();
     this.chatProxy.connect(this.props.username);
     this.chatProxy.onMessage(this.addMessage.bind(this));
+    this.chatProxy.onUserConnected(this.userConnected.bind(this));
+    this.chatProxy.onUserDisconnected(this.userDisconnected.bind(this));
+  },
+
+  userConnected: function (user) {
+    var users = this.state.users;
+    users.push(user);
+    this.setState({
+      users: users
+    });
+  },
+
+  userDisconnected: function (user) {
+    var users = this.state.users;
+    users.splice(users.indexOf(user), 1);
+    this.setState({
+      users: users
+    });
   },
 
   messageHandler: function (message) {
@@ -37,7 +59,7 @@ var ChatBox = React.createClass({
         <div className="chat-header ui-widget-header">React p2p Chat</div>
         <div className="chat-content-wrapper row">
           <MessagesList ref="messagesList"></MessagesList>
-          <UsersList ref="usersList"></UsersList>
+          <UsersList users={this.state.users} ref="usersList"></UsersList>
         </div>
         <MessageInput
           ref="messageInput"

@@ -10,7 +10,7 @@ $(function () {
     React.renderComponent(<ChatBox username={username}></ChatBox>, container);
   }
 
-  initChat($('#container')[0], 'a');
+//  initChat($('#container')[0], 'a');
 
 //  window.onbeforeunload = function () {
 //    return 'Wat?!';
