@@ -18,8 +18,8 @@ body, html {
   text-align: center;
   font-size: 20px;
   font-weight: bold;
-  color: wheat;
-  background-color: #555;
+  color: #fff;
+  background-color: #59ADEB;
 }
 
 .chat-messages {
