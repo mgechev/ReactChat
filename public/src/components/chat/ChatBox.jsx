@@ -47,13 +47,6 @@ var ChatBox = React.createClass({
     }
   },
 
-  addSystemMessage: function (message) {
-    if (message) {
-      message.isSystem = true;
-      this.refs.messagesList.addMessage(message);
-    }
-  },
-
   render: function () {
     return (
       <div className="chat-box" ref="root">

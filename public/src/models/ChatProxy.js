@@ -35,26 +35,6 @@ ChatProxy.prototype.broadcast = function (msg) {
   }
 };
 
-ChatProxy.prototype._connectTo = function (username) {
-  var conn = this.peer.connect(username);
-  conn.on('open', function () {
-    this._registerPeer(username, conn);
-  }.bind(this));
-};
-
-ChatProxy.prototype._registerPeer = function (username, conn) {
-  console.log('Registering', username);
-  this._peers[username] = conn;
-  conn.on('data', function (msg) {
-    console.log('Messaga received', msg);
-    this.emit(Topics.USER_MESSAGE, { content: msg, author: username });
-  }.bind(this));
-};
-
-ChatProxy.prototype._disconnectFrom = function (username) {
-  delete this._peers[username];
-};
-
 ChatProxy.prototype.connect = function (username) {
   var self = this;
   this.setUsername(username);
@@ -88,5 +68,25 @@ ChatProxy.prototype.connect = function (username) {
     self._registerPeer(conn.peer, conn);
     self.emit(Topics.USER_CONNECTED, conn.peer);
   });
+};
+
+ChatProxy.prototype._connectTo = function (username) {
+  var conn = this.peer.connect(username);
+  conn.on('open', function () {
+    this._registerPeer(username, conn);
+  }.bind(this));
+};
+
+ChatProxy.prototype._registerPeer = function (username, conn) {
+  console.log('Registering', username);
+  this._peers[username] = conn;
+  conn.on('data', function (msg) {
+    console.log('Messaga received', msg);
+    this.emit(Topics.USER_MESSAGE, { content: msg, author: username });
+  }.bind(this));
+};
+
+ChatProxy.prototype._disconnectFrom = function (username) {
+  delete this._peers[username];
 };
 

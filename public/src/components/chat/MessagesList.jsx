@@ -34,15 +34,9 @@ var MessagesList = React.createClass({
   render: function () {
     var messages;
     messages = this.state.messages.map(function (m) {
-      if (m.isSystem) {
-        return (
-          <SystemChatMessage message={m}></SystemChatMessage>
-        );
-      } else {
-        return (
-          <ChatMessage message={m}></ChatMessage>
-        );
-      }
+      return (
+        <ChatMessage message={m}></ChatMessage>
+      );
     });
     if (!messages.length) {
       messages = <div className="chat-no-messages">No messages</div>;
