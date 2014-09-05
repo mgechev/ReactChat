@@ -9,7 +9,6 @@ app.use(express.static(__dirname + '/public'));
 var expressServer = app.listen(port);
 var io = require('socket.io').listen(expressServer);
 
-
 console.log('Listening on port', port);
 
 var peerServer = new PeerServer({ port: 9000, path: '/chat' });
