@@ -8,7 +8,7 @@ var ChatBox = React.createClass({
   },
 
   componentDidMount: function () {
-    this.chatProxy = new ChatProxy();
+    this.chatProxy = this.props.chatProxy;
     this.chatProxy.connect(this.props.username);
     this.chatProxy.onMessage(this.addMessage.bind(this));
     this.chatProxy.onUserConnected(this.userConnected.bind(this));

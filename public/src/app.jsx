@@ -7,11 +7,12 @@ $(function () {
   });
 
   function initChat(container, username) {
-    React.renderComponent(<ChatBox username={username}></ChatBox>, container);
+    React.renderComponent(<ChatBox chatProxy={new ChatProxy()}
+      username={username}></ChatBox>, container);
   }
 
   window.onbeforeunload = function () {
-    return 'Wat?!';
+    return 'Are you sure you want to leave this page?';
   };
 
 });
