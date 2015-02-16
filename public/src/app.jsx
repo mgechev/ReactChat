@@ -1,6 +1,8 @@
+/* global EventEmitter, Topics, io, Peer */
 /** @jsx React.DOM */
 
 $(function () {
+  'use strict';
   $('#connect-btn').click(function () {
     initChat($('#container')[0],
       $('#username-input').val());

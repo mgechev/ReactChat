@@ -1,3 +1,6 @@
+/* global EventEmitter, Topics, io, Peer */
+'use strict';
+
 function ChatProxy() {
   EventEmitter.call(this);
   this._peers = {};
@@ -59,7 +62,9 @@ ChatProxy.prototype.connect = function (username) {
   });
   console.log('Connecting with username', username);
   this.peer = new Peer(username, {
-    host: location.hostname, port: 9000, path: '/chat'
+    host: location.hostname,
+    port: 9000,
+    path: '/chat'
   });
   this.peer.on('open', function (userId) {
     self.setUsername(userId);
@@ -89,4 +94,3 @@ ChatProxy.prototype._registerPeer = function (username, conn) {
 ChatProxy.prototype._disconnectFrom = function (username) {
   delete this._peers[username];
 };
-

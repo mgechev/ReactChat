@@ -1,11 +1,12 @@
 /** @jsx React.DOM */
+'use strict';
 
 var ChatMessage = React.createClass({
 
   render: function () {
-    var msg = this.props.message,
-        hours = msg.date.getHours(),
-        minutes = msg.date.getMinutes();
+    var msg = this.props.message;
+    var hours = msg.date.getHours();
+    var minutes = msg.date.getMinutes();
     hours = (hours < 9) ? '0' + hours : hours;
     minutes = (minutes < 9) ? '0' + minutes : minutes;
     return (

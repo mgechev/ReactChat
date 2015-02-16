@@ -9,8 +9,8 @@ var MessagesList = React.createClass({
   },
 
   addMessage: function (message) {
-    var messages = this.state.messages,
-        container = this.refs.messageContainer.getDOMNode();
+    var messages = this.state.messages;
+    var container = this.refs.messageContainer.getDOMNode();
     messages.push(message);
     this.setState({ messages: messages });
     // Smart scrolling - when the user is
