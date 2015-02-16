@@ -64,6 +64,9 @@ body, html {
 
 .chat-content-wrapper {
   height: -webkit-calc(100% - 64px);
+  height: -moz-calc(100% - 64px);
+  height: -ms-calc(100% - 64px);
+  height: calc(100% - 64px);
   margin: 0px;
 }
 
